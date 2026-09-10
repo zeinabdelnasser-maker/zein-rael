@@ -1,0 +1,2956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZEIN REAL ESTATE | RE/MAX AVALON</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f5;
+    color: #111;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(255,255,255,.95);
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 2px;
+    margin-top: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #777;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 7%;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.42),
+            rgba(0,0,0,.42)
+        ),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-small {
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: .95;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 550px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #eee;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 28px;
+
+    background: white;
+    color: #111;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    padding: 90px 7%;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 40px;
+}
+
+.section-head h2 {
+    font-size: 42px;
+}
+
+.section-head p {
+    color: #777;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        160px;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.search-box input,
+.search-box select {
+    padding: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 7px;
+
+    background: white;
+
+    outline: none;
+}
+
+.search-btn {
+    border: none;
+
+    background: #111;
+    color: white;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PROPERTY GRID
+========================= */
+
+.properties-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.property-card {
+    background: white;
+
+    border: 1px solid #eee;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08);
+}
+
+.property-image {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+}
+
+.property-content {
+    padding: 22px;
+}
+
+.property-status {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    background: #111;
+    color: white;
+
+    border-radius: 4px;
+
+    font-size: 11px;
+
+    margin-bottom: 12px;
+}
+
+.property-title {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.property-location {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.property-info {
+    display: flex;
+
+    gap: 15px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.property-price {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.view-property {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border: 1px solid #111;
+
+    background: white;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+}
+
+.view-property:hover {
+    background: #111;
+    color: white;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+
+    height: 550px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.about-content h2 {
+    font-size: 50px;
+
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: #666;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #111;
+    color: white;
+
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 48px;
+
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #aaa;
+
+    margin-bottom: 30px;
+}
+
+.contact-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.contact-buttons a {
+    padding: 14px 25px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    background: white;
+    color: #111;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 30px 7%;
+
+    background: #080808;
+
+    color: #777;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   ADMIN BUTTON
+========================= */
+
+.admin-btn {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #111;
+    color: white;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.2);
+
+    z-index: 9999;
+
+    transition: .3s;
+}
+
+.admin-btn:hover {
+    transform: rotate(45deg) scale(1.05);
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    background: rgba(0,0,0,.65);
+
+    padding: 30px;
+
+    overflow-y: auto;
+}
+
+.modal.active {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 30px;
+}
+
+.close-btn {
+    position: absolute;
+
+    right: 20px;
+    top: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: #f2f2f2;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-box {
+    max-width: 420px;
+
+    text-align: center;
+}
+
+.login-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f1f1;
+
+    font-size: 30px;
+}
+
+.login-box h2 {
+    margin-bottom: 8px;
+}
+
+.login-box > p {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.input-group textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+.login-error {
+    color: #e53935 !important;
+
+    margin-top: 15px !important;
+
+    margin-bottom: 0 !important;
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-box {
+    max-width: 950px;
+}
+
+.admin-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.admin-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #888;
+}
+
+.admin-header h2 {
+    margin-top: 5px;
+}
+
+.logout-btn {
+    border: 1px solid #ddd;
+
+    background: white;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+}
+
+.add-property-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.admin-property {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border: 1px solid #eee;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+}
+
+.admin-property img {
+    width: 90px;
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+}
+
+.admin-property-info {
+    flex: 1;
+}
+
+.admin-property-info h4 {
+    margin-bottom: 5px;
+}
+
+.admin-property-info p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.delete-btn {
+    border: none;
+
+    background: #ffecec;
+
+    color: #d33;
+
+    padding: 9px 13px;
+
+    border-radius: 7px;
+}
+
+
+/* =========================
+   PROPERTY FORM
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 15px;
+}
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+.publish-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    background: #111;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    margin-top: 10px;
+}
+
+.image-preview {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.image-preview img {
+    width: 100%;
+
+    height: 90px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+}
+
+
+/* =========================
+   PROPERTY DETAILS
+========================= */
+
+.details-box {
+    max-width: 900px;
+}
+
+.details-main-image {
+    width: 100%;
+
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+.details-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.details-gallery img {
+    width: 100%;
+
+    height: 80px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.details-title {
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+.details-location {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+.details-price {
+    font-size: 27px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.details-info {
+    display: flex;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #eee;
+
+    border-bottom: 1px solid #eee;
+
+    margin-bottom: 20px;
+}
+
+.details-description {
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.details-buttons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.details-buttons a {
+    flex: 1;
+
+    text-align: center;
+
+    padding: 14px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    background: #111;
+
+    color: white;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 60px;
+
+    color: #777;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 580px;
+    }
+
+    .search-box {
+        grid-template-columns: 1fr;
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    .section-head {
+        display: block;
+    }
+
+    .section-head h2 {
+        margin-bottom: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-full {
+        grid-column: auto;
+    }
+
+    .admin-property {
+        align-items: flex-start;
+    }
+
+    .admin-property img {
+        width: 70px;
+        height: 60px;
+    }
+
+    .details-main-image {
+        height: 280px;
+    }
+
+    .details-gallery {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        ZEIN REAL ESTATE
+        <span>RE/MAX AVALON · ALEXANDRIA</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#properties">Properties</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            RE/MAX AVALON · ALEXANDRIA
+        </div>
+
+        <h1>
+            Find a place<br>
+            worth calling home.
+        </h1>
+
+        <p>
+            Discover carefully selected properties in Alexandria
+            with Zein Abdelnaser.
+        </p>
+
+        <a href="#properties" class="hero-btn">
+            Explore Properties
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROPERTIES
+========================= -->
+
+<section class="section" id="properties">
+
+    <div class="section-head">
+
+        <div>
+            <h2>Featured Properties</h2>
+            <p>Selected properties available now.</p>
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search location..."
+        >
+
+        <select id="typeFilter">
+
+            <option value="">All Types</option>
+
+            <option value="Apartment">
+                Apartment
+            </option>
+
+            <option value="Villa">
+                Villa
+            </option>
+
+            <option value="Chalet">
+                Chalet
+            </option>
+
+        </select>
+
+        <select id="budgetFilter">
+
+            <option value="">
+                Any Budget
+            </option>
+
+            <option value="1000000">
+                Under 1M
+            </option>
+
+            <option value="3000000">
+                Under 3M
+            </option>
+
+            <option value="5000000">
+                Under 5M
+            </option>
+
+        </select>
+
+        <button
+            class="search-btn"
+            onclick="renderProperties()"
+        >
+            Search
+        </button>
+
+    </div>
+
+
+    <div
+        class="properties-grid"
+        id="propertiesGrid"
+    ></div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section" id="about">
+
+    <div class="about">
+
+        <img
+            class="about-image"
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
+            alt="Real Estate"
+        >
+
+        <div class="about-content">
+
+            <h2>
+                About Zein
+            </h2>
+
+            <p>
+                I help clients find the right property
+                with a simple, transparent and professional
+                real estate experience.
+            </p>
+
+            <p>
+                From choosing the right location to
+                understanding the property details,
+                I am here to help you make the right decision.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section contact" id="contact">
+
+    <h2>
+        Let's find your next home.
+    </h2>
+
+    <p>
+        Have a property in mind? Let's talk.
+    </p>
+
+    <div class="contact-buttons">
+
+        <!-- غير الرقم هنا -->
+
+        <a
+            href="https://wa.me/201000000000"
+            target="_blank"
+        >
+            WhatsApp
+        </a>
+
+        <a href="tel:+201000000000">
+            Call Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    © 2026 Zein Abdelnaser · RE/MAX Avalon Alexandria
+
+</footer>
+
+
+<!-- =========================
+     ADMIN BUTTON
+========================= -->
+
+<button
+    class="admin-btn"
+    onclick="openAdminLogin()"
+    title="Admin"
+>
+    ⚙️
+</button>
+
+
+<!-- =========================
+     ADMIN LOGIN MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="adminLoginModal"
+>
+
+    <div class="modal-box login-box">
+
+        <button
+            class="close-btn"
+            onclick="closeAdminLogin()"
+        >
+            ×
+        </button>
+
+        <div class="login-icon">
+            🔐
+        </div>
+
+        <h2>
+            Admin Login
+        </h2>
+
+        <p>
+            Enter your credentials to access the dashboard.
+        </p>
+
+
+        <div class="input-group">
+
+            <label>
+                Username
+            </label>
+
+            <input
+                type="text"
+                id="adminUsername"
+                placeholder="Username"
+                autocomplete="username"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Password"
+                autocomplete="current-password"
+            >
+
+        </div>
+
+
+        <button
+            class="login-btn"
+            onclick="adminLogin()"
+        >
+            Login
+        </button>
+
+
+        <p
+            id="loginError"
+            class="login-error"
+        ></p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ADMIN DASHBOARD
+========================= -->
+
+<div
+    class="modal"
+    id="adminModal"
+>
+
+    <div class="modal-box admin-box">
+
+        <button
+            class="close-btn"
+            onclick="closeAdmin()"
+        >
+            ×
+        </button>
+
+
+        <div class="admin-header">
+
+            <div>
+
+                <span class="admin-label">
+                    ADMIN DASHBOARD
+                </span>
+
+                <h2>
+                    Welcome, Zein 👋
+                </h2>
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                onclick="adminLogout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+
+        <button
+            class="add-property-btn"
+            onclick="openAddProperty()"
+        >
+            + Add New Property
+        </button>
+
+
+        <div
+            id="adminProperties"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ADD PROPERTY MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="propertyModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closePropertyModal()"
+        >
+            ×
+        </button>
+
+
+        <h2 style="margin-bottom:25px;">
+            Add New Property
+        </h2>
+
+
+        <form id="propertyForm">
+
+            <div class="form-grid">
+
+
+                <!-- TITLE -->
+
+                <div class="input-group form-full">
+
+                    <label>
+                        Property Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="propertyTitle"
+                        placeholder="Example: Luxury Apartment in Miami"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="input-group">
+
+                    <label>
+                        Location
+                    </label>
+
+                    <select
+                        id="propertyLocation"
+                        required
+                    >
+
+                        <option value="">
+                            Select Location
+                        </option>
+
+                        <option value="Sidi Beshr">
+                            Sidi Beshr
+                        </option>
+
+                        <option value="Miami">
+                            Miami
+                        </option>
+
+                        <option value="Mandara">
+                            Mandara
+                        </option>
+
+                        <option value="Smouha">
+                            Smouha
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TYPE -->
+
+                <div class="input-group">
+
+                    <label>
+                        Property Type
+                    </label>
+
+                    <select
+                        id="propertyType"
+                        required
+                    >
+
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="Apartment">
+                            Apartment
+                        </option>
+
+                        <option value="Villa">
+                            Villa
+                        </option>
+
+                        <option value="Chalet">
+                            Chalet
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRICE -->
+
+                <div class="input-group">
+
+                    <label>
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="propertyPrice"
+                        placeholder="2500000"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- AREA -->
+
+                <div class="input-group">
+
+                    <label>
+                        Area (m²)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="propertyArea"
+                        placeholder="150"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BEDROOMS -->
+
+                <div class="input-group">
+
+                    <label>
+                        Bedrooms
+                    </label>
+
+                    <input
+                        type="number"
+                        id="propertyBedrooms"
+                        placeholder="3"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BATHROOMS -->
+
+                <div class="input-group">
+
+                    <label>
+                        Bathrooms
+                    </label>
+
+                    <input
+                        type="number"
+                        id="propertyBathrooms"
+                        placeholder="2"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- FLOOR -->
+
+                <div class="input-group">
+
+                    <label>
+                        Floor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="propertyFloor"
+                        placeholder="8th Floor"
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="input-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select id="propertyStatus">
+
+                        <option value="For Sale">
+                            For Sale
+                        </option>
+
+                        <option value="For Rent">
+                            For Rent
+                        </option>
+
+                        <option value="Sold">
+                            Sold
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="input-group form-full">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="propertyDescription"
+                        placeholder="Write property details..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- IMAGES -->
+
+                <div class="input-group form-full">
+
+                    <label>
+                        Property Images
+                    </label>
+
+                    <input
+                        type="file"
+                        id="propertyImages"
+                        accept="image/*"
+                        multiple
+                    >
+
+                    <div
+                        class="image-preview"
+                        id="imagePreview"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="publish-btn"
+            >
+                Publish Property
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     PROPERTY DETAILS MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="detailsModal"
+>
+
+    <div class="modal-box details-box">
+
+        <button
+            class="close-btn"
+            onclick="closeDetails()"
+        >
+            ×
+        </button>
+
+
+        <div id="propertyDetails"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+/* =========================================
+   ADMIN LOGIN DATA
+========================================= */
+
+const ADMIN_USERNAME = "zein";
+const ADMIN_PASSWORD = "123456";
+
+
+/* =========================================
+   DEFAULT PROPERTIES
+========================================= */
+
+const defaultProperties = [
+
+    {
+        id: 1,
+
+        title: "Modern Apartment in Miami",
+
+        location: "Miami",
+
+        type: "Apartment",
+
+        price: 2500000,
+
+        area: 150,
+
+        bedrooms: 3,
+
+        bathrooms: 2,
+
+        floor: "8th Floor",
+
+        status: "For Sale",
+
+        description:
+            "Modern apartment in a prime location with excellent finishing and spacious rooms.",
+
+        images: [
+            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80"
+        ]
+
+    },
+
+
+    {
+        id: 2,
+
+        title: "Luxury Apartment in Smouha",
+
+        location: "Smouha",
+
+        type: "Apartment",
+
+        price: 3800000,
+
+        area: 190,
+
+        bedrooms: 3,
+
+        bathrooms: 2,
+
+        floor: "12th Floor",
+
+        status: "For Sale",
+
+        description:
+            "Luxury apartment located in Smouha close to major services and transportation.",
+
+        images: [
+            "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80"
+        ]
+
+    },
+
+
+    {
+        id: 3,
+
+        title: "Sea View Apartment",
+
+        location: "Sidi Beshr",
+
+        type: "Apartment",
+
+        price: 3200000,
+
+        area: 165,
+
+        bedrooms: 3,
+
+        bathrooms: 2,
+
+        floor: "10th Floor",
+
+        status: "For Sale",
+
+        description:
+            "Beautiful sea view apartment with a spacious reception and excellent natural light.",
+
+        images: [
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
+        ]
+
+    }
+
+];
+
+
+/* =========================================
+   LOAD PROPERTIES
+========================================= */
+
+let properties =
+    JSON.parse(
+        localStorage.getItem("zeinProperties")
+    );
+
+
+if (!properties) {
+
+    properties = defaultProperties;
+
+    saveProperties();
+
+}
+
+
+/* =========================================
+   SAVE
+========================================= */
+
+function saveProperties() {
+
+    localStorage.setItem(
+        "zeinProperties",
+        JSON.stringify(properties)
+    );
+
+}
+
+
+/* =========================================
+   FORMAT PRICE
+========================================= */
+
+function formatPrice(price) {
+
+    return new Intl.NumberFormat("en-US").format(price);
+
+}
+
+
+/* =========================================
+   RENDER PROPERTIES
+========================================= */
+
+function renderProperties() {
+
+    const grid =
+        document.getElementById("propertiesGrid");
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const type =
+        document
+        .getElementById("typeFilter")
+        .value;
+
+    const budget =
+        document
+        .getElementById("budgetFilter")
+        .value;
+
+
+    const filtered =
+        properties.filter(property => {
+
+            const locationMatch =
+                property.location
+                .toLowerCase()
+                .includes(search);
+
+
+            const typeMatch =
+                !type ||
+                property.type === type;
+
+
+            const budgetMatch =
+                !budget ||
+                property.price <= Number(budget);
+
+
+            return (
+                locationMatch &&
+                typeMatch &&
+                budgetMatch
+            );
+
+        });
+
+
+    if (!filtered.length) {
+
+        grid.innerHTML = `
+            <div class="empty">
+                No properties found.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    grid.innerHTML =
+        filtered.map(property => `
+
+        <div class="property-card">
+
+            <img
+                class="property-image"
+                src="${property.images[0]}"
+                alt="${property.title}"
+            >
+
+            <div class="property-content">
+
+                <span class="property-status">
+                    ${property.status}
+                </span>
+
+                <h3 class="property-title">
+                    ${property.title}
+                </h3>
+
+                <p class="property-location">
+                    📍 ${property.location}
+                </p>
+
+                <div class="property-info">
+
+                    <span>
+                        ${property.area} m²
+                    </span>
+
+                    <span>
+                        ${property.bedrooms} Beds
+                    </span>
+
+                    <span>
+                        ${property.bathrooms} Baths
+                    </span>
+
+                </div>
+
+                <div class="property-price">
+                    EGP ${formatPrice(property.price)}
+                </div>
+
+                <button
+                    class="view-property"
+                    onclick="openDetails(${property.id})"
+                >
+                    View Property
+                </button>
+
+            </div>
+
+        </div>
+
+    `).join("");
+
+}
+
+
+/* =========================================
+   OPEN PROPERTY DETAILS
+========================================= */
+
+function openDetails(id) {
+
+    const property =
+        properties.find(
+            p => p.id === id
+        );
+
+
+    if (!property) return;
+
+
+    const details =
+        document.getElementById(
+            "propertyDetails"
+        );
+
+
+    details.innerHTML = `
+
+        <img
+            id="detailsMainImage"
+            class="details-main-image"
+            src="${property.images[0]}"
+            alt="${property.title}"
+        >
+
+
+        <div class="details-gallery">
+
+            ${
+                property.images.map(image => `
+
+                    <img
+                        src="${image}"
+                        onclick="changeDetailsImage('${image}')"
+                    >
+
+                `).join("")
+            }
+
+        </div>
+
+
+        <span class="property-status">
+            ${property.status}
+        </span>
+
+
+        <h2 class="details-title">
+            ${property.title}
+        </h2>
+
+
+        <p class="details-location">
+            📍 ${property.location}
+        </p>
+
+
+        <div class="details-price">
+            EGP ${formatPrice(property.price)}
+        </div>
+
+
+        <div class="details-info">
+
+            <span>
+                📐 ${property.area} m²
+            </span>
+
+            <span>
+                🛏 ${property.bedrooms} Bedrooms
+            </span>
+
+            <span>
+                🚿 ${property.bathrooms} Bathrooms
+            </span>
+
+            <span>
+                🏢 ${property.floor || "N/A"}
+            </span>
+
+            <span>
+                🏠 ${property.type}
+            </span>
+
+        </div>
+
+
+        <p class="details-description">
+            ${property.description || "No description available."}
+        </p>
+
+
+        <div class="details-buttons">
+
+            <a
+                href="https://wa.me/201000000000?text=${encodeURIComponent(
+                    "Hello Zein, I am interested in: " + property.title
+                )}"
+                target="_blank"
+            >
+                WhatsApp
+            </a>
+
+            <a href="tel:+201000000000">
+                Call
+            </a>
+
+        </div>
+
+    `;
+
+
+    document
+        .getElementById("detailsModal")
+        .classList.add("active");
+
+}
+
+
+/* =========================================
+   CHANGE IMAGE
+========================================= */
+
+function changeDetailsImage(src) {
+
+    document
+        .getElementById("detailsMainImage")
+        .src = src;
+
+}
+
+
+/* =========================================
+   CLOSE DETAILS
+========================================= */
+
+function closeDetails() {
+
+    document
+        .getElementById("detailsModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================
+   ADMIN LOGIN
+========================================= */
+
+function openAdminLogin() {
+
+    if (
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        ) === "true"
+    ) {
+
+        document
+            .getElementById("adminModal")
+            .classList.add("active");
+
+        renderAdminProperties();
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("adminLoginModal")
+        .classList.add("active");
+
+}
+
+
+function closeAdminLogin() {
+
+    document
+        .getElementById("adminLoginModal")
+        .classList.remove("active");
+
+}
+
+
+function adminLogin() {
+
+    const username =
+        document
+        .getElementById("adminUsername")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("adminPassword")
+        .value;
+
+
+    const error =
+        document
+        .getElementById("loginError");
+
+
+    if (
+        username === ADMIN_USERNAME &&
+        password === ADMIN_PASSWORD
+    ) {
+
+        sessionStorage.setItem(
+            "adminLoggedIn",
+            "true"
+        );
+
+
+        error.textContent = "";
+
+
+        document
+            .getElementById("adminUsername")
+            .value = "";
+
+
+        document
+            .getElementById("adminPassword")
+            .value = "";
+
+
+        closeAdminLogin();
+
+
+        document
+            .getElementById("adminModal")
+            .classList.add("active");
+
+
+        renderAdminProperties();
+
+    }
+
+    else {
+
+        error.textContent =
+            "Username or password is incorrect.";
+
+    }
+
+}
+
+
+/* =========================================
+   ADMIN LOGOUT
+========================================= */
+
+function adminLogout() {
+
+    sessionStorage.removeItem(
+        "adminLoggedIn"
+    );
+
+    closeAdmin();
+
+}
+
+
+/* =========================================
+   CLOSE ADMIN
+========================================= */
+
+function closeAdmin() {
+
+    document
+        .getElementById("adminModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================
+   RENDER ADMIN PROPERTIES
+========================================= */
+
+function renderAdminProperties() {
+
+    const container =
+        document.getElementById(
+            "adminProperties"
+        );
+
+
+    if (!properties.length) {
+
+        container.innerHTML = `
+            <div class="empty">
+                No properties yet.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        properties.map(property => `
+
+        <div class="admin-property">
+
+            <img
+                src="${property.images[0]}"
+                alt="${property.title}"
+            >
+
+            <div class="admin-property-info">
+
+                <h4>
+                    ${property.title}
+                </h4>
+
+                <p>
+                    ${property.location}
+                    · EGP ${formatPrice(property.price)}
+                </p>
+
+            </div>
+
+
+            <button
+                class="delete-btn"
+                onclick="deleteProperty(${property.id})"
+            >
+                Delete
+            </button>
+
+        </div>
+
+    `).join("");
+
+}
+
+
+/* =========================================
+   DELETE PROPERTY
+========================================= */
+
+function deleteProperty(id) {
+
+    if (
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        ) !== "true"
+    ) {
+
+        return;
+
+    }
+
+
+    const confirmDelete =
+        confirm(
+            "Are you sure you want to delete this property?"
+        );
+
+
+    if (!confirmDelete) return;
+
+
+    properties =
+        properties.filter(
+            property =>
+                property.id !== id
+        );
+
+
+    saveProperties();
+
+    renderAdminProperties();
+
+    renderProperties();
+
+}
+
+
+/* =========================================
+   OPEN ADD PROPERTY
+========================================= */
+
+function openAddProperty() {
+
+    if (
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        ) !== "true"
+    ) {
+
+        closeAdmin();
+
+        openAdminLogin();
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("propertyModal")
+        .classList.add("active");
+
+}
+
+
+/* =========================================
+   CLOSE PROPERTY MODAL
+========================================= */
+
+function closePropertyModal() {
+
+    document
+        .getElementById("propertyModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================
+   IMAGE UPLOAD PREVIEW
+========================================= */
+
+let uploadedImages = [];
+
+
+document
+    .getElementById("propertyImages")
+    .addEventListener(
+        "change",
+        function(event) {
+
+            uploadedImages = [];
+
+            const preview =
+                document.getElementById(
+                    "imagePreview"
+                );
+
+            preview.innerHTML = "";
+
+
+            const files =
+                Array.from(
+                    event.target.files
+                );
+
+
+            files.forEach(file => {
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload = function(e) {
+
+                    uploadedImages.push(
+                        e.target.result
+                    );
+
+
+                    const img =
+                        document.createElement(
+                            "img"
+                        );
+
+                    img.src =
+                        e.target.result;
+
+
+                    preview.appendChild(img);
+
+                };
+
+
+                reader.readAsDataURL(file);
+
+            });
+
+        }
+    );
+
+
+/* =========================================
+   ADD PROPERTY
+========================================= */
+
+document
+    .getElementById("propertyForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            if (
+                sessionStorage.getItem(
+                    "adminLoggedIn"
+                ) !== "true"
+            ) {
+
+                alert(
+                    "You must login as admin first."
+                );
+
+                return;
+
+            }
+
+
+            if (!uploadedImages.length) {
+
+                alert(
+                    "Please select at least one image."
+                );
+
+                return;
+
+            }
+
+
+            const newProperty = {
+
+                id:
+                    Date.now(),
+
+                title:
+                    document
+                    .getElementById(
+                        "propertyTitle"
+                    )
+                    .value,
+
+                location:
+                    document
+                    .getElementById(
+                        "propertyLocation"
+                    )
+                    .value,
+
+                type:
+                    document
+                    .getElementById(
+                        "propertyType"
+                    )
+                    .value,
+
+                price:
+                    Number(
+                        document
+                        .getElementById(
+                            "propertyPrice"
+                        )
+                        .value
+                    ),
+
+                area:
+                    Number(
+                        document
+                        .getElementById(
+                            "propertyArea"
+                        )
+                        .value
+                    ),
+
+                bedrooms:
+                    Number(
+                        document
+                        .getElementById(
+                            "propertyBedrooms"
+                        )
+                        .value
+                    ),
+
+                bathrooms:
+                    Number(
+                        document
+                        .getElementById(
+                            "propertyBathrooms"
+                        )
+                        .value
+                    ),
+
+                floor:
+                    document
+                    .getElementById(
+                        "propertyFloor"
+                    )
+                    .value,
+
+                status:
+                    document
+                    .getElementById(
+                        "propertyStatus"
+                    )
+                    .value,
+
+                description:
+                    document
+                    .getElementById(
+                        "propertyDescription"
+                    )
+                    .value,
+
+                images:
+                    uploadedImages
+
+            };
+
+
+            properties.unshift(
+                newProperty
+            );
+
+
+            saveProperties();
+
+
+            renderProperties();
+
+
+            renderAdminProperties();
+
+
+            document
+                .getElementById(
+                    "propertyForm"
+                )
+                .reset();
+
+
+            uploadedImages = [];
+
+
+            document
+                .getElementById(
+                    "imagePreview"
+                )
+                .innerHTML = "";
+
+
+            closePropertyModal();
+
+
+            alert(
+                "Property published successfully!"
+            );
+
+        }
+    );
+
+
+/* =========================================
+   ENTER TO LOGIN
+========================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" &&
+            document
+            .getElementById(
+                "adminLoginModal"
+            )
+            .classList
+            .contains("active")
+        ) {
+
+            adminLogin();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   MODAL BACKDROP CLOSE
+========================================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const loginModal =
+            document.getElementById(
+                "adminLoginModal"
+            );
+
+        const adminModal =
+            document.getElementById(
+                "adminModal"
+            );
+
+        const propertyModal =
+            document.getElementById(
+                "propertyModal"
+            );
+
+        const detailsModal =
+            document.getElementById(
+                "detailsModal"
+            );
+
+
+        if (
+            event.target === loginModal
+        ) {
+
+            closeAdminLogin();
+
+        }
+
+
+        if (
+            event.target === adminModal
+        ) {
+
+            closeAdmin();
+
+        }
+
+
+        if (
+            event.target === propertyModal
+        ) {
+
+            closePropertyModal();
+
+        }
+
+
+        if (
+            event.target === detailsModal
+        ) {
+
+            closeDetails();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   INITIAL RENDER
+========================================= */
+
+renderProperties();
+
+</script>
+<script>
+
+/* =========================================
+   ADMIN LOGIN
+========================================= */
+
+/*
+   غير البيانات دي لبياناتك أنت
+*/
+
+const ADMIN_USERNAME = "zein";
+const ADMIN_PASSWORD = "123456";
+
+
+/* فتح شاشة تسجيل الدخول */
+
+function openAdminLogin() {
+
+  // لو مسجل دخول بالفعل
+  if (sessionStorage.getItem("adminLoggedIn") === "true") {
+
+    document.getElementById("adminModal").classList.add("active");
+
+    if (typeof renderAdminProperties === "function") {
+      renderAdminProperties();
+    }
+
+    return;
+  }
+
+  document
+    .getElementById("adminLoginModal")
+    .classList.add("active");
+
+}
+
+
+/* قفل Login */
+
+function closeAdminLogin() {
+
+  document
+    .getElementById("adminLoginModal")
+    .classList.remove("active");
+
+}
+
+
+/* تسجيل الدخول */
+
+function adminLogin() {
+
+  const username =
+    document.getElementById("adminUsername").value.trim();
+
+  const password =
+    document.getElementById("adminPassword").value;
+
+  const error =
+    document.getElementById("loginError");
+
+
+  if (
+    username === ADMIN_USERNAME &&
+    password === ADMIN_PASSWORD
+  ) {
+
+    // حفظ تسجيل الدخول لهذه الجلسة
+    sessionStorage.setItem(
+      "adminLoggedIn",
+      "true"
+    );
+
+    error.textContent = "";
+
+    closeAdminLogin();
+
+    document
+      .getElementById("adminModal")
+      .classList.add("active");
+
+
+    if (typeof renderAdminProperties === "function") {
+      renderAdminProperties();
+    }
+
+  } else {
+
+    error.textContent =
+      "Username or password is incorrect.";
+
+  }
+
+}
+
+
+/* =========================================
+   ADMIN PANEL PROTECTION
+========================================= */
+
+function closeAdmin() {
+
+  document
+    .getElementById("adminModal")
+    .classList.remove("active");
+
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+function adminLogout() {
+
+  sessionStorage.removeItem("adminLoggedIn");
+
+  closeAdmin();
+
+}
+
+
+/* =========================================
+   PROTECT ADD PROPERTY
+========================================= */
+
+function openAddProperty() {
+
+  if (
+    sessionStorage.getItem("adminLoggedIn") !== "true"
+  ) {
+
+    closeAdmin();
+
+    openAdminLogin();
+
+    return;
+  }
+
+
+  /*
+    هنا حط الكود القديم بتاع
+    فتح Add Property Modal
+  */
+
+  document
+    .getElementById("propertyModal")
+    .classList.add("active");
+
+}
+
+
+/* =========================================
+   ENTER KEY LOGIN
+========================================= */
+
+document.addEventListener("keydown", function(e) {
+
+  if (e.key === "Enter") {
+
+    const loginModal =
+      document.getElementById("adminLoginModal");
+
+    if (
+      loginModal &&
+      loginModal.classList.contains("active")
+    ) {
+
+      adminLogin();
+
+    }
+
+  }
+
+});
+
+
+/* =========================================
+   AUTO PROTECT ADMIN MODAL
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  const adminModal =
+    document.getElementById("adminModal");
+
+  if (adminModal) {
+
+    adminModal.addEventListener(
+      "click",
+      function(e) {
+
+        if (e.target === adminModal) {
+
+          closeAdmin();
+
+        }
+
+      }
+    );
+
+  }
+
+});
+</script>
+</body>
+</html>
